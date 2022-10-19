@@ -47,6 +47,8 @@ public class adivinanumero2 {
 		JOptionPane.showMessageDialog(null, "Enhorabuena, lo has conseguido en " + intentos + " intentos");
 		
 		JOptionPane.showMessageDialog(null, "Estos son tu intentos " + resultados);
+		
+		System.out.println("Esto es una prueba de github");
 	}
 	}
 
