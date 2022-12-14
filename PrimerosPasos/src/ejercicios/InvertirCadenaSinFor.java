@@ -5,33 +5,27 @@ import java.util.Scanner;
 public class InvertirCadenaSinFor {
 
 	
-		public static void main(String[] args) {
+	public static void main(String[] args) {
+		
+		try (Scanner entrada = new Scanner(System.in)) {
+			System.out.println("Introduce un texto y pulsa intro");
+			String cadena = entrada.nextLine();
 			
-			try (Scanner entrada = new Scanner(System.in)) {
-				System.out.println("Introduce un texto y pulsa intro");
-				String cadena = entrada.nextLine();
+			if(!cadena.isEmpty()) {
+		System.out.println(invertirCadena(cadena));
 				
-				if(!cadena.isEmpty()) {
-			System.out.println(invertir(cadena));
-					
-				}
-				else {
-					System.out.println("La cadena está vacia");
-			
 			}
+			else {
+				System.out.println("La cadena está vacia");
+		
 			}
 		}
-
-			private static String invertir(String cadena) {
-				String invertida = "";
-				
-				for (int indice = cadena.length() - 1; indice >= 0; indice--) {
-				
-				invertida += cadena.charAt(indice);
-			}
-			
-				return invertida;
-			}
 	}
-
-
+	
+	public static String invertirCadena(String cadena) {
+		  if (cadena.isEmpty()) {
+		    return cadena;
+		  }
+		  return invertirCadena(cadena.substring(1)) + cadena.charAt(0);
+	}
+}
